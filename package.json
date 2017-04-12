@@ -1,0 +1,66 @@
+{
+  "name": "cours-services-web-avec-nodejs",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Zenika/cours-services-web-avec-nodejs",
+  "bugs": "https://github.com/Zenika/cours-services-web-avec-nodejs/issues",
+  "licence": "MIT",
+  "author": "Zenika <info@zenika.com> (http://www.zenika.com)",
+  "contributors": [
+    "Hugo Wood <hugo.wood@zenika.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zenika/cours-services-web-avec-nodejs.git"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=7.8",
+    "npm": ">=2.0"
+  },
+  "engineStrict": true,
+  "main": "app",
+  "scripts": {
+    "start": "node app.js",
+    "lint": "eslint *.js",
+    "lint:fix": "eslint --fix *.js tests/*.js",
+    "mocha": "mocha --timeout 10000",
+    "step0": "npm run mocha tests/step0.test.js",
+    "step1": "npm run mocha tests/step1.test.js",
+    "step2": "npm run mocha tests/step2.test.js",
+    "step3": "npm run mocha tests/step3.test.js",
+    "step4": "npm run mocha tests/step4.test.js",
+    "step5": "npm run mocha tests/step5.test.js",
+    "step6": "npm run mocha tests/step6.test.js",
+    "upto1": "npm run step1 && npm run step0",
+    "upto2": "npm run step2 && npm run upto1",
+    "upto3": "npm run step3 && npm run upto2",
+    "upto4": "npm run step4 && npm run upto3",
+    "upto5": "npm run step5 && npm run upto4",
+    "upto6": "npm run step6 && npm run upto5",
+    "test:nolint": "npm run upto6",
+    "test:oneprocess": "npm run mocha tests/*.test.js",
+    "test": "npm run lint && npm run test:nolint"
+  },
+  "config": {
+    "port": 3232,
+    "contacts": "./contacts.json"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "commander": "2.9.0",
+    "denodeify": "^1.2.1",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0",
+    "serve-static": "^1.12.1",
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-things": "0.2.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0"
+  }
+}
